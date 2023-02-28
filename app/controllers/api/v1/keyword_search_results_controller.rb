@@ -1,6 +1,8 @@
 module Api
   module V1
     class KeywordSearchResultsController < ApplicationController
+      before_action :authenticate_user!
+
       def show
         query = SearchQuery.find_by(id: params[:search_query_id])
         keyword = query.keyword_search_results.find_by(id: params[:id])

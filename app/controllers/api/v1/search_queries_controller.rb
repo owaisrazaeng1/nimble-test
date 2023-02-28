@@ -2,6 +2,8 @@ module Api
   module V1
     class SearchQueriesController < ApplicationController
       protect_from_forgery with: :null_session
+      before_action :authenticate_user!
+
       def create
         user = User.find_by(id: params[:user_id])
       	SearchQuery.import(params[:file], user)
