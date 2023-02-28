@@ -1,0 +1,28 @@
+<section class="mt-5">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <h2 class="text-uppercase mb-3">Previous Searches</h2>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Date</th>
+            <th scope="col"># of Keywords</th>
+            <th scope="col">First Keyword</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider table-divider-color">
+          <% @queries.each do |query| %>
+            <tr>
+              <td><%= query.id %></td>
+              <td><%= link_to query.created_at, search_query_path(query)%></td>
+              <td><%= query.keywords.count %></td>
+              <td><%= query.keywords[0] %></td>
+              <td><%= link_to "Delete", search_query_path(query), data: { "turbo-method": :delete, confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
