@@ -1,8 +1,8 @@
 class SearchQueriesController < ApplicationController
   before_action :set_query, :only => [:show, :destroy]
+  before_action :authenticate_user!
 
   def new
-  	redirect_to root_path unless user_signed_in?
   	@search_query = SearchQuery.new
   end
 
