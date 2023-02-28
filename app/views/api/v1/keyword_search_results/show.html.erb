@@ -1,0 +1,27 @@
+<section class="mt-5">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <h2 class="text-uppercase mb-3">Search Result</h2>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Query</th>
+            <th scope="col">Advertisors Count</th>
+            <th scope="col">Links Count</th>
+            <th scope="col">Code</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider table-divider-color">
+          <tr>
+            <td><%= @keyword_search_result.query%></td>
+            <td><%= @keyword_search_result.advertisors_count %></td>
+            <td><%= @keyword_search_result.links_count %></td>
+            <td><%= @keyword_search_result.results_count %></td>
+            <td><%= @keyword_search_result.code %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

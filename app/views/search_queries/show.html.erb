@@ -1,0 +1,29 @@
+<section class="mt-5">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <h2 class="text-uppercase mb-3">Previous Searches</h2>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Date</th>
+            <th scope="col"># of Keywords</th>
+            <th scope="col">First Keyword</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider table-divider-color">
+          <% @keywords.each do |keyword| %>
+              <tr>
+                <td>
+                  <%= link_to keyword.query, keyword_search_result_path(keyword.search_query, keyword)%>
+                </td>
+                <td><%= keyword.advertisors_count %></td>
+                <td><%= keyword.links_count %></td>
+                <td><%= keyword.results_count %></td>
+              </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

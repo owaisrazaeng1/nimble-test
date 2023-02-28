@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <span class="navbar-brand">Nimble Test</span>
+
+    <div class="navbar flex-grow-1" id="navbarButtonsExample">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 mr-auto">
+        <li class="nav-item">
+          <%= link_to "Home", root_path, class: "nav-link" %>
+        </li>
+      </ul>
+
+      <div class="d-flex align-items-center ml-auto">
+        <% if user_signed_in? %>
+          <%= link_to "Sign Out", destroy_user_session_path, class: "btn btn-link px-3 me-2", data: { "turbo-method": :delete }  %>
+        <% else %>
+          <%= link_to "Login", new_user_session_path, class: "btn btn-link px-3 me-2" %>
+          <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary me-3" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</nav>
