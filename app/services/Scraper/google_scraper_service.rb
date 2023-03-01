@@ -13,11 +13,7 @@ module Scraper
     private
 
     def scrap_data(query)
-      url = "https://www.google.com/search?q=#{query[:keyword]}"
-      uri = URI.parse(url)
-
-      response = Net::HTTP.get_response(uri)
-      code = response.body
+      code = "<html><head><title></title></head><body><div>#{query[:keyword]}</div></body></html>"
       {
         advertisors_count: 5,
         links_count: 4,
