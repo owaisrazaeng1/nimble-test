@@ -53,6 +53,8 @@ gem 'rspec-rails', '~> 6.0', '>= 6.0.1'
 gem 'nokogiri', '~> 1.14', '>= 1.14.2'
 gem 'httparty', '~> 0.21.0'
 gem 'pry', '~> 0.14.2'
+gem 'capybara', '~> 2.7', '>= 2.7.1'
+gem 'kimurai', '~> 1.4'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

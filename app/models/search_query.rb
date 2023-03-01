@@ -8,8 +8,14 @@ class SearchQuery < ApplicationRecord
 
   def self.import(file, user)
     keywords = []
-    CSV.foreach(file.path, headers: true) do |row|
-      keywords << row[0]
+    CSV.foreach(file.path) do |row|
+      if row.count > 1
+        row.each do |keyword|
+          keywords << keyword
+        end
+      else
+        keywords << row[0]
+      end
     end
     search_query = SearchQuery.new(user_id: user.id)
     search_query.keywords = keywords
