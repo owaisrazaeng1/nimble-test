@@ -7,7 +7,9 @@ class SearchQueriesController < ApplicationController
   end
 
   def create
-  	SearchQuery.import(params[:search_query][:file], current_user)
+    unless SearchQuery.import(params[:search_query][:file], current_user)
+      flash[:warning] = 'Please enter less than 100 keywords.'
+    end
     redirect_to root_path
   end
 

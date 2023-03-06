@@ -16,7 +16,7 @@ describe "user", type: :feature do
 
 
     click_button 'Sign up'
-    expect(page).to have_content 'Sign Out'
+    expect(page).to have_current_path(root_path)
   end
 
   it "signs me in" do
@@ -26,6 +26,6 @@ describe "user", type: :feature do
     fill_in 'user_password', with: 'password'
 
     click_button 'Login'
-    expect(page).to have_content 'Sign Out'
+    expect(page).to have_current_path(root_path)
   end
 end
