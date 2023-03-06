@@ -55,6 +55,7 @@ gem 'httparty', '~> 0.21.0'
 gem 'pry', '~> 0.14.2'
 gem 'capybara', '~> 2.7', '>= 2.7.1'
 gem 'kimurai', '~> 1.4'
+gem 'open-uri'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

@@ -17,6 +17,9 @@ class SearchQuery < ApplicationRecord
         keywords << row[0]
       end
     end
+
+    return if keywords.count > 100
+
     search_query = SearchQuery.new(user_id: user.id)
     search_query.keywords = keywords
     search_query.save
